@@ -1,0 +1,4 @@
+# csharp-006-a-bytebank-excecoes
+
+# Anotações:
+- Curso Alura.
