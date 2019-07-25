@@ -6,42 +6,33 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            /*ContaCorrente conta = new ContaCorrente(867, 86712540);
-
-            // conta.Agencia = 867;
-            conta.Numero = 86712540;
-
-            Console.WriteLine(conta.Agencia);
-            Console.WriteLine(conta.Numero);
-
-            Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
-
-            Console.ReadLine();*/
-
-            /*try
-            {
-                Metodo();
-            }
-            catch (DivideByZeroException ex)
-            {
-                Console.WriteLine("Não é possível divisão por 0!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-            }
-            Console.ReadLine();*/
-
             try
             {
-                ContaCorrente conta = new ContaCorrente(0, 0);
+                ContaCorrente conta = new ContaCorrente(867, 86712540);
+
+                Console.WriteLine(conta.Agencia);
+                Console.WriteLine(conta.Numero);
+
+                Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
+
+                Metodo();
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Não é possível divisão por 0!");
             }
             catch (ArgumentException ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.ParamName);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+
+            Console.ReadLine();
         }
 
         public static int Dividir(int numero, int divisor)
@@ -50,7 +41,7 @@ namespace ByteBank
             {
                 return numero / divisor;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Exceção com numero=" + numero + " e divisor=" + divisor);
                 throw;
