@@ -22,14 +22,14 @@ namespace ByteBank
             {
                 Metodo();
             }
-            catch (DivideByZeroException e)
+            catch (DivideByZeroException ex)
             {
                 Console.WriteLine("Não é possível divisão por 0!");
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine(e.Message);
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
             }
             Console.ReadLine();
         }
@@ -40,7 +40,7 @@ namespace ByteBank
             {
                 return numero / divisor;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Console.WriteLine("Exceção com numero=" + numero + " e divisor=" + divisor);
                 throw;
