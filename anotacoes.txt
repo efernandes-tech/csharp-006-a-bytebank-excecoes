@@ -2,3 +2,23 @@
 
 # Anotações:
 - Curso Alura.
+- O using é um açúcar sintático para o código:
+
+    RecursoDoSistema recurso = null;
+    try
+    {
+        recurso = new RecursoDoSistema();
+        recurso.Usar();
+    }
+    finally
+    {
+        if(recurso != null)
+        {
+            recurso.Dispose(); // Liberar recurso.
+        }
+    }
+
+    using (RecursoDoSistema recurso = new RecursoDoSistema())
+    {
+        recurso.Usar();
+    }
